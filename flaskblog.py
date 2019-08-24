@@ -1,15 +1,30 @@
-from flask import Flask, escape, request
+from flask import Flask, render_template
 
 app = Flask(__name__)
+
+posts = [
+	{
+		'author': 'Tommy',
+		'title': 'Blog Post 1',
+		'content': 'First post',
+		'date_posted': 'April 20, 2018'
+	},
+	{
+		'author': 'Aatrox',
+		'title': 'Blog Post 2',
+		'content': '2 post',
+		'date_posted': 'April 20, 2018'
+	}
+]
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return "<h1>Home</h1>"
+    return render_template('home.html', posts=posts)
 
 @app.route('/about')
 def about():
-	return "<h2>About</h2>"
+	return render_template('about.html', title='About')
 
 
 if __name__ == "__main__":
