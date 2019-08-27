@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, RadioField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, RadioField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flaskblog.models import User
 
@@ -63,3 +63,8 @@ class SurveyForm(FlaskForm):
 	question5 = RadioField('Question 5', choices=[(5,'Agree'),(4,'Somewhat Agree'),(3,'Neutral'),(2,'Somewhat Disagree'),(1,'Disagree')])
 	submit = SubmitField('Submit')
 
+
+class PostForm(FlaskForm):
+	title = StringField('Title', validators=[DataRequired()])
+	content = TextAreaField('Content', validators=[DataRequired()])
+	submit = SubmitField('Post')
