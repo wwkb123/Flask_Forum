@@ -28,6 +28,7 @@
             <div class="navbar-nav mr-auto">
               <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
               <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+              <a class="nav-item nav-link" href="{{ url_for('survey') }}">Survey</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
@@ -45,7 +46,11 @@
     </header>
     <main role="main" class="container">
       <div class="row">
+        {% if isSurvey %}
+        <div class="col-md-12">
+        {% else %}
         <div class="col-md-8">
+        {% endif %}
           {% with messages = get_flashed_messages(with_categories=true) %}
           	{% if messages %}
           		{% for category, message in messages %}
@@ -58,6 +63,8 @@
           {% block content %}{% endblock %}
         
         </div>
+        {% if isSurvey %}
+        {% else %}
         <div class="col-md-4">
           <div class="content-section">
             <h3>Our Sidebar</h3>
@@ -71,6 +78,7 @@
             </p>
           </div>
         </div>
+        {% endif %}
       </div>
     </main>
 

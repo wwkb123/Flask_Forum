@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Survey</h1>
+<div class="content-section">
+	<form method="POST" action="">
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">    
+						Questions
+					</div>
+					{% for subfield in form.question1 %}
+					<div class="col-sm-1">
+						{{ subfield.label }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">    
+						{{ form.question1.label }}
+					</div>
+					{% for subfield in form.question1 %}
+					<div class="col-sm-1">
+						{{ subfield }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">    
+						{{ form.question2.label }}
+					</div>
+					{% for subfield in form.question2 %}
+					<div class="col-sm-1">
+						{{ subfield }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">    
+						{{ form.question3.label }}
+					</div>
+					{% for subfield in form.question3 %}
+					<div class="col-sm-1">
+						{{ subfield }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">    
+						{{ form.question4.label }}
+					</div>
+					{% for subfield in form.question4 %}
+					<div class="col-sm-1">
+						{{ subfield }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">    
+						{{ form.question5.label }}
+					</div>
+					{% for subfield in form.question5 %}
+					<div class="col-sm-1">
+						{{ subfield }}
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+			<div class="form-group">
+				<center>{{ form.submit(class="btn btn-outline-info") }}</center>
+			</div>
+		</form>
+	</div>
+
+{% endblock content %}

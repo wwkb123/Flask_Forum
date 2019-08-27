@@ -4,7 +4,7 @@ from PIL import Image
 from flask import Flask, render_template, url_for, flash, redirect, request
 from flaskblog import app, db, bcrypt
 from flaskblog.models import User, Post
-from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from flaskblog.forms import RegistrationForm, LoginForm, UpdateAccountForm, SurveyForm
 from flask_login import login_user, current_user, logout_user, login_required
 
 posts = [
@@ -106,5 +106,10 @@ def account():
 	image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
 	return render_template('account.html', title='Account', image_file=image_file, form=form)
 
+
+@app.route('/survey', methods=['GET', 'POST'])
+def survey():
+	form = SurveyForm()
+	return render_template('survey.html', title='Survey', form=form, isSurvey=True)
 
 
