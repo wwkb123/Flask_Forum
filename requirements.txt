@@ -14,3 +14,4 @@ Pillow==4.2.1
 SQLAlchemy==1.1.13
 Werkzeug==0.12.2
 WTForms==2.2.1
+gunicorn
