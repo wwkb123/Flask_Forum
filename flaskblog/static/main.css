@@ -1,5 +1,5 @@
 body {
-  background: #fafafa;
+  background: white;
   color: #333333;
   margin-top: 5rem;
 }
@@ -9,11 +9,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #5f788a;
+  background-color: #ffb100;
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: white;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -77,4 +77,32 @@ a.article-title:hover {
 
 .account-heading {
   font-size: 2.5rem;
+}
+
+.content-section {
+  border: 1px solid #ffb100;
+}
+
+a {
+  color: #ff8600;
+}
+
+.btn-outline-info {
+  color: #ff8600;
+  border-color: #ffb100;
+}
+
+.btn-outline-info:hover {
+  color: white;
+  background-color: #ffb100;
+  border-color: #ffb100;
+}
+
+.btn-info {
+  background-color: #ffb100;
+  border-color: #ffb100;
+}
+
+a.article-title:hover {
+    color: #ff8600;
 }
