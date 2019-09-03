@@ -16,3 +16,5 @@ Werkzeug==0.12.2
 WTForms==2.2.1
 gunicorn
 psycopg2-binary
+flask_script
+flask_migrate
