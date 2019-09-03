@@ -2,7 +2,7 @@ import os
 import psycopg2
 
 class Config:
-	SECRET_KEY = os.environ.get('SECRET_KEY')  #'a99c515275ef1355c18ff3efc46221ce'
+	SECRET_KEY = os.environ.get('SECRET_KEY') 
 	SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')  #'sqlite:///site.db'
 	MAIL_SERVER = 'smtp.gmail.com'
 	MAIL_PORT = 587
