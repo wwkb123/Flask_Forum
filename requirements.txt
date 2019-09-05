@@ -18,3 +18,7 @@ gunicorn
 psycopg2-binary
 flask_script
 flask_migrate
+beautifulsoup4
+lxml
+html5lib
+requests
