@@ -1,5 +1,5 @@
 body {
-  background: white;
+  background: #f5f7fa;
   color: #333333;
   margin-top: 5rem;
 }
@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #ffb100;
+  background-color: #41d6c3 /*#ffb100*/;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a.article-title:hover {
-  color: #428bca;
+  color: #41d6c3;
   text-decoration: none;
 }
 
@@ -54,7 +54,7 @@ a.article-title:hover {
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+  border-bottom: 1px solid #41d6c3
 }
 
 .article-metadata a:hover {
@@ -80,29 +80,29 @@ a.article-title:hover {
 }
 
 .content-section {
-  border: 1px solid #ffb100;
+  border: 1px solid #41d6c3;
 }
 
 a {
-  color: #ff8600;
+  color: #41d6c3;
 }
 
 .btn-outline-info {
-  color: #ff8600;
-  border-color: #ffb100;
+  color: #41d6c3;
+  border-color: #41d6c3;
 }
 
 .btn-outline-info:hover {
   color: white;
-  background-color: #ffb100;
-  border-color: #ffb100;
+  background-color: #41d6c3;
+  border-color: #41d6c3;
 }
 
 .btn-info {
-  background-color: #ffb100;
-  border-color: #ffb100;
+  background-color: #41d6c3;
+  border-color: #41d6c3;
 }
 
 a.article-title:hover {
-    color: #ff8600;
+    color: #41d6c3;
 }
