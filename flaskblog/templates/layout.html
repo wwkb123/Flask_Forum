@@ -33,9 +33,12 @@
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
-              <span class="nav-link mr-5 text-white">Welcome, {{ current_user.username }}!</span>
+              {% if current_user.username == 'admin' %}
+                  <a class="nav-item nav-link" href="{{ url_for('main.admin') }}">ADMIN PAGE</a>
+                {% endif %}
                <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">New Post</a>
-                <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
+                <a class="nav-item nav-link font-weight-bold" href="{{ url_for('users.account') }}">{{ current_user.username }}</a>
+
                 <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('users.login') }}">Login</a>
@@ -48,11 +51,13 @@
     </header>
     <main role="main" class="container">
       <div class="row">
-        {% if isSurvey %}
-        <div class="col-md-12">
-        {% else %}
+        {% if enableSidebar %}
         <div class="col-md-8">
+        {% else %}
+        <div class="col-md-12">
         {% endif %}
+
+
           {% with messages = get_flashed_messages(with_categories=true) %}
           	{% if messages %}
           		{% for category, message in messages %}
@@ -65,25 +70,26 @@
           {% block content %}{% endblock %}
         
         </div>
-        {% if isSurvey %}
-        {% else %}
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Our Sidebar</h3>
-            <p class='text-muted'>Coming Soon
-              <ul class="list-group">
-                Youtube/Meme feeds<br>
-                Stock/Weather Screening<br>
-                Admin manage page<br>
-                Pokemon<br>
-                <li class="list-group-item list-group-item-light">Latest Posts</li>
-                <li class="list-group-item list-group-item-light">Announcements</li>
-                <li class="list-group-item list-group-item-light">Calendars</li>
-                <li class="list-group-item list-group-item-light">etc</li>
-              </ul>
-            </p>
+        {% if enableSidebar %}
+          <div class="col-md-4">
+            <div class="content-section">
+              <h3>Our Sidebar</h3>
+              <p class='text-muted'>Coming Soon
+                <ul class="list-group">
+                  Youtube/Meme feeds<br>
+                  Stock/Weather Screening<br>
+                  Admin manage page<br>
+                  Pokemon<br>
+                  <li class="list-group-item list-group-item-light">Latest Posts</li>
+                  <li class="list-group-item list-group-item-light">Announcements</li>
+                  <li class="list-group-item list-group-item-light">Calendars</li>
+                  <li class="list-group-item list-group-item-light">etc</li>
+                </ul>
+              </p>
+            </div>
           </div>
-        </div>
+        {% else %}
+        
         {% endif %}
       </div>
     </main>
