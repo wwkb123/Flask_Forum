@@ -8,10 +8,7 @@ main = Blueprint('main', __name__)
 @main.route('/')
 @main.route('/home')
 def home():
-	# posts = Post.query.all()
-	page = request.args.get('page', 1, type=int)  # passing from URL
-	posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
-	return render_template('home.html', posts=posts)
+	return render_template('home.html', title='About')
 
 @main.route('/about')
 def about():
@@ -25,3 +22,9 @@ def survey():
 	return render_template('survey.html', title='Survey', form=form, isSurvey=True)
 
 
+@main.route('/forum')
+def forum():
+	# posts = Post.query.all()
+	page = request.args.get('page', 1, type=int)  # passing from URL
+	posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
+	return render_template('forum.html', posts=posts)
