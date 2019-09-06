@@ -2,14 +2,15 @@ from flask import render_template, request, Blueprint
 from flaskblog.models import Post
 from flask import Blueprint
 from flaskblog.main.forms import SurveyForm
-from scraper import scrape
+from scraper import scrape_video, scrape_article
 
 main = Blueprint('main', __name__)
 
 @main.route('/')
 @main.route('/home')
 def home():
-	return render_template('home.html', title='About', yt_video_ids=scrape("pokemon"))
+	keywords = ["pokemon","python","javascript"]
+	return render_template('home.html', title='About', yt_video_ids=scrape_video(keywords), articles=scrape_article())  
 
 @main.route('/about')
 def about():

@@ -1,10 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
 	<div class="content-section">
-	HOME
-	<br>
-	{% for yt_video_id in yt_video_ids %}
-		<iframe width="49%" height="315" src="https://www.youtube.com/embed/{{ yt_video_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	{% endfor %}
+	<br><br><br><br>
+		<div class="container">
+			<h2 class="border-bottom font-weight-bolder">Videos for you</h2><br>
+			<div class="row justify-content-center">
+				{% for yt_video_id in yt_video_ids %}
+				<div class="col-3 m-3">
+					<iframe width="250" height="auto" src="https://www.youtube.com/embed/{{ yt_video_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	<br><br><br><br>
+
+		<div class="container">
+			<h2 class="border-bottom font-weight-bolder">Articles for you</h2><br>
+			<div class="row pl-5">
+			{% for article_link, article_title in articles %}
+				<div class="col-12">
+				<li><a href="{{ article_link }}" target="_blank">{{ article_title }}</a></li>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+
+
+	<br><br><br><br><br><br><br><br>
 	</div>
 {% endblock content %}
